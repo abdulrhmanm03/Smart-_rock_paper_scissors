@@ -2,15 +2,13 @@ import random
 
 
 
-played_after = {"r": {"r": 0, "p": 0, "s": 0, "t": 0}, "p": {"r": 0, "p": 0, "s": 0, "t": 0}, "s": {"r": 0, "p": 0, "s": 0, "t": 0}}
+played_after = {"r": {"r": 1, "p": 1, "s": 1, "t": 3}, "p": {"r": 1, "p": 1, "s": 1, "t": 3}, "s": {"r": 1, "p": 1, "s": 1, "t": 3}}
 
 def addafter(xi, x, dict):
     dict[x]["t"] += 1 
     dict[xi][x] += 1
     
-def choice(r,p,s,t):
-    if r == p == s == 0:
-        return random.choice(['r', 'p', 's'])   
+def choice(r,p,s,t):  
     wp = (r/t)*100
     ws = (p/t)*100
     wr = (s/t)*100
